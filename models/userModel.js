@@ -57,6 +57,11 @@ const userSchema = new mongoose.Schema(
         },
         phone: {
             type: String
+        },
+        balance: {
+            type: Number,
+            required: true,
+            default: 0
         }
     },
     {
