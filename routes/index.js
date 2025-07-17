@@ -20,21 +20,22 @@ const ContactUsRoute = require('./contactUsRoute');
 
 // mount routes
 const mountRoutes = (app) => {
-app.use('/api/v1/categories', CategoryRoute); 
-app.use('/api/v1/subcategories', SubCategoryRoute);
-app.use('/api/v1/brand', BrandRoute);
-app.use('/api/v1/products', ProductRoute);
-app.use('/api/v1/users', UserRoute);
-app.use('/api/v1/auth', AuthRoute);
-app.use('/api/v1/reviews', ReviewRoute);
-app.use('/api/v1/wishlist', WishlistRoute);
-app.use('/api/v1/address', AddressRoute);
-app.use('/api/auth/phone', phoneOtpRoute);
-app.use('/api/v1/coupon', CouponRoute);
-app.use('/api/v1/cart', CartRoute);
-app.use('/api/v1/orders', OrderRoute);
-app.use('/api/v1/llm-search', llmSearchRoute);
-app.use('/api/v1/contactUs', ContactUsRoute);
+app.use('/api/mazen/categories', CategoryRoute); 
+app.use('/api/mazen/subcategories', SubCategoryRoute);
+app.use('/api/mazen/brand', BrandRoute);
+app.use('/api/mazen/products', ProductRoute);
+app.use('/api/mazen/users', UserRoute);
+app.use('/api/mazen/auth', AuthRoute);
+app.use('/api/mazen/reviews', ReviewRoute);
+app.use('/api/mazen/wishlist', WishlistRoute);
+app.use('/api/mazen/address', AddressRoute);
+app.use('/api/mazen/phone', phoneOtpRoute);
+app.use('/api/mazen/coupon', CouponRoute);
+app.use('/api/mazen/cart', CartRoute);
+app.use('/api/mazen/orders', OrderRoute);
+app.use('/api/mazen/llm-search', llmSearchRoute);
+app.use('/api/mazen/contactUs', ContactUsRoute);
+app.get('/api/mazen/health-check', (req,res) => {res.status(200).json({ status: 'ok' });});
 };
 
 module.exports = mountRoutes;
