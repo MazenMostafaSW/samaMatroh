@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const ApiError = require('../utils/apiError');
 const ApiFeatures = require('../utils/apiFeatures');
+const transactionModel = require('../models/transactionModel');
 
 // Make sure all models are imported at the top
 // This ensures they're registered with Mongoose before any populate operations
@@ -86,8 +87,6 @@ exports.getAll = (Model) =>
         // Execute query
         const { mongooseQuery, paginationResult } = apiFeatures;
         const documents = await mongooseQuery;
-
-        // console.log('Page:', req.query.page, 'IDs:', documents.map(d => d._id));
 
         res
             .status(200)
